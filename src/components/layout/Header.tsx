@@ -138,56 +138,56 @@ export const Header = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-zinc-900 absolute top-full left-0 w-full border-b border-[#D4AF37] shadow-xl overflow-y-auto max-h-[90vh]">
           <div className="flex flex-col p-4 gap-4">
-            <Link href="/" className="border-b border-zinc-800 pb-2">Home</Link>
+            <Link href="/" className="border-b border-zinc-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Solutions</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                <Link href={getHref("solutions", "White Label Online Casino Software")}>White Label Online Casino Software</Link>
-                <Link href={getHref("solutions", "Turnkey Casino Software")}>Turnkey Casino Software</Link>
-                <Link href={getHref("solutions", "Self-Service Casino")}>Self-Service Casino</Link>
+                <Link href={getHref("solutions", "White Label Online Casino Software")} onClick={() => setIsMobileMenuOpen(false)}>White Label Online Casino Software</Link>
+                <Link href={getHref("solutions", "Turnkey Casino Software")} onClick={() => setIsMobileMenuOpen(false)}>Turnkey Casino Software</Link>
+                <Link href={getHref("solutions", "Self-Service Casino")} onClick={() => setIsMobileMenuOpen(false)}>Self-Service Casino</Link>
               </div>
             </div>
 
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Services</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                <Link href={getHref("services", "Casino Games Integration")}>Casino Games Integration</Link>
-                <Link href={getHref("services", "Casino Games Aggregator")}>Casino Games Aggregator</Link>
-                <Link href={getHref("services", "Online Casino Payment Solutions")}>Online Casino Payment Solutions</Link>
-                <Link href={getHref("services", "Bonus System Standalone")}>Bonus System Standalone</Link>
-                <Link href={getHref("services", "Sportsbook Solutions & API")}>Sportsbook Solutions & API</Link>
-                <Link href={getHref("services", "Bank Accounts")}>Bank Accounts</Link>
-                <Link href={getHref("services", "Licensing")}>Licensing</Link>
-                <Link href={getHref("services", "Live Casino Bundle")}>Live Casino Bundle</Link>
-                <Link href={getHref("services", "Slots Bundle")}>Slots Bundle</Link>
+                <Link href={getHref("services", "Casino Games Integration")} onClick={() => setIsMobileMenuOpen(false)}>Casino Games Integration</Link>
+                <Link href={getHref("services", "Casino Games Aggregator")} onClick={() => setIsMobileMenuOpen(false)}>Casino Games Aggregator</Link>
+                <Link href={getHref("services", "Online Casino Payment Solutions")} onClick={() => setIsMobileMenuOpen(false)}>Online Casino Payment Solutions</Link>
+                <Link href={getHref("services", "Bonus System Standalone")} onClick={() => setIsMobileMenuOpen(false)}>Bonus System Standalone</Link>
+                <Link href={getHref("services", "Sportsbook Solutions & API")} onClick={() => setIsMobileMenuOpen(false)}>Sportsbook Solutions & API</Link>
+                <Link href={getHref("services", "Bank Accounts")} onClick={() => setIsMobileMenuOpen(false)}>Bank Accounts</Link>
+                <Link href={getHref("services", "Licensing")} onClick={() => setIsMobileMenuOpen(false)}>Licensing</Link>
+                <Link href={getHref("services", "Live Casino Bundle")} onClick={() => setIsMobileMenuOpen(false)}>Live Casino Bundle</Link>
+                <Link href={getHref("services", "Slots Bundle")} onClick={() => setIsMobileMenuOpen(false)}>Slots Bundle</Link>
               </div>
             </div>
 
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Casino</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                <Link href={getHref("casino", "Online Casino Software")}>Online Casino Software</Link>
-                <Link href={getHref("casino", "Live Casino Software")}>Live Casino Software</Link>
-                <Link href={getHref("casino", "Casino Games")}>Casino Games</Link>
-                <Link href={getHref("casino", "Lottery & Bingo")}>Lottery & Bingo</Link>
-                <Link href={getHref("casino", "Casino Tournament")}>Casino Tournament</Link>
-                <Link href={getHref("casino", "Streaming Platform")}>Streaming Platform</Link>
+                <Link href={getHref("casino", "Online Casino Software")} onClick={() => setIsMobileMenuOpen(false)}>Online Casino Software</Link>
+                <Link href={getHref("casino", "Live Casino Software")} onClick={() => setIsMobileMenuOpen(false)}>Live Casino Software</Link>
+                <Link href={getHref("casino", "Casino Games")} onClick={() => setIsMobileMenuOpen(false)}>Casino Games</Link>
+                <Link href={getHref("casino", "Lottery & Bingo")} onClick={() => setIsMobileMenuOpen(false)}>Lottery & Bingo</Link>
+                <Link href={getHref("casino", "Casino Tournament")} onClick={() => setIsMobileMenuOpen(false)}>Casino Tournament</Link>
+                <Link href={getHref("casino", "Streaming Platform")} onClick={() => setIsMobileMenuOpen(false)}>Streaming Platform</Link>
               </div>
             </div>
 
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">White Label</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                <Link href={getHref("white-label", "White Label Betting Platform")}>White Label Betting Platform</Link>
-                <Link href={getHref("white-label", "White Label Casino")}>White Label Casino</Link>
+                <Link href={getHref("white-label", "White Label Betting Platform")} onClick={() => setIsMobileMenuOpen(false)}>White Label Betting Platform</Link>
+                <Link href={getHref("white-label", "White Label Casino")} onClick={() => setIsMobileMenuOpen(false)}>White Label Casino</Link>
               </div>
             </div>
 
-            <Link href="/about-us" className="border-b border-zinc-800 pb-2">About Us</Link>
-            <Link href="/contact-us" className="border-b border-zinc-800 pb-2">Contact Us</Link>
+            <Link href="/about-us" className="border-b border-zinc-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+            <Link href="/contact-us" className="border-b border-zinc-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
             
-            <Link href="/contact-us" className="bg-[#D4AF37] text-black text-center py-3 font-bold rounded mt-4">
+            <Link href="/contact-us" className="bg-[#D4AF37] text-black text-center py-3 font-bold rounded mt-4" onClick={() => setIsMobileMenuOpen(false)}>
               Create Panel
             </Link>
           </div>
