@@ -143,16 +143,44 @@ export const Header = () => {
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Solutions</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                <Link href="/solutions/white-label-online-casino-software">White Label Casino</Link>
-                <Link href="/solutions/turnkey-casino-software">Turnkey Casino</Link>
+                <Link href={getHref("solutions", "White Label Online Casino Software")}>White Label Online Casino Software</Link>
+                <Link href={getHref("solutions", "Turnkey Casino Software")}>Turnkey Casino Software</Link>
+                <Link href={getHref("solutions", "Self-Service Casino")}>Self-Service Casino</Link>
+              </div>
+            </div>
+
+            <div className="border-b border-zinc-800 pb-2">
+              <span className="text-[#D4AF37] font-bold block mb-2">Services</span>
+              <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
+                <Link href={getHref("services", "Casino Games Integration")}>Casino Games Integration</Link>
+                <Link href={getHref("services", "Casino Games Aggregator")}>Casino Games Aggregator</Link>
+                <Link href={getHref("services", "Online Casino Payment Solutions")}>Online Casino Payment Solutions</Link>
+                <Link href={getHref("services", "Bonus System Standalone")}>Bonus System Standalone</Link>
+                <Link href={getHref("services", "Sportsbook Solutions & API")}>Sportsbook Solutions & API</Link>
+                <Link href={getHref("services", "Bank Accounts")}>Bank Accounts</Link>
+                <Link href={getHref("services", "Licensing")}>Licensing</Link>
+                <Link href={getHref("services", "Live Casino Bundle")}>Live Casino Bundle</Link>
+                <Link href={getHref("services", "Slots Bundle")}>Slots Bundle</Link>
               </div>
             </div>
 
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Casino</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                 <Link href="/casino/online-casino-software">Online Casino Software</Link>
-                 <Link href="/casino/live-casino-software">Live Casino Software</Link>
+                <Link href={getHref("casino", "Online Casino Software")}>Online Casino Software</Link>
+                <Link href={getHref("casino", "Live Casino Software")}>Live Casino Software</Link>
+                <Link href={getHref("casino", "Casino Games")}>Casino Games</Link>
+                <Link href={getHref("casino", "Lottery & Bingo")}>Lottery & Bingo</Link>
+                <Link href={getHref("casino", "Casino Tournament")}>Casino Tournament</Link>
+                <Link href={getHref("casino", "Streaming Platform")}>Streaming Platform</Link>
+              </div>
+            </div>
+
+            <div className="border-b border-zinc-800 pb-2">
+              <span className="text-[#D4AF37] font-bold block mb-2">White Label</span>
+              <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
+                <Link href={getHref("white-label", "White Label Betting Platform")}>White Label Betting Platform</Link>
+                <Link href={getHref("white-label", "White Label Casino")}>White Label Casino</Link>
               </div>
             </div>
 
