@@ -1,0 +1,33 @@
+
+> profitplus@0.1.0 build
+> next build
+
+   ▲ Next.js 14.1.4
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/7) ...
+   Generating static pages (1/7) 
+   Generating static pages (3/7) 
+   Generating static pages (5/7) 
+ ✓ Generating static pages (7/7) 
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    2.31 kB        86.6 kB
+├ ○ /_not-found                          882 B          85.2 kB
+├ λ /[category]/[slug]                   177 B          91.3 kB
+├ ○ /about-us                            177 B          91.3 kB
+└ ○ /contact-us                          2.31 kB        86.6 kB
++ First Load JS shared by all            84.3 kB
+  ├ chunks/69-c714be80bf0f6e96.js        29 kB
+  ├ chunks/fd9d1056-dbef55b898297e58.js  53.4 kB
+  └ other shared chunks (total)          1.9 kB
+
+
+○  (Static)   prerendered as static content
+λ  (Dynamic)  server-rendered on demand using Node.js
+
