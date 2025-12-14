@@ -8,6 +8,11 @@ export const TopBar = () => {
         <div className="flex items-center text-center md:text-left animate-pulse">
           <span className="mr-2 text-yellow-500 text-lg">⚠️</span>
           <p>
+            <span className="font-bold text-yellow-500">Beware of fake sites!</span> Profitplus Gaming is the only genuine platform.
+            We won’t be responsible if you deal with others claiming to be us. Stay safe.
+          </p>
+        </div>
+
             <span className="font-bold text-yellow-500">Beware of fake sites!</span> Profitplus Gaming is the only genuine platform. 
             We won’t be responsible if you deal with others claiming to be us. Stay safe.
           </p>

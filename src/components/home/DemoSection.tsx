@@ -9,6 +9,7 @@ const DemoCard = ({ title, adminId, password, link, imageColor }: { title: strin
         <div className="text-white text-3xl font-bold opacity-80">{title}</div>
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
       </div>
+
       
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-4 flex items-center justify-between">
@@ -17,6 +18,7 @@ const DemoCard = ({ title, adminId, password, link, imageColor }: { title: strin
             <ExternalLink size={20} />
           </a>
         </h3>
+
         
         <div className="space-y-3 bg-black/50 p-4 rounded-lg border border-zinc-800">
           <div className="flex items-center gap-3">
@@ -28,6 +30,7 @@ const DemoCard = ({ title, adminId, password, link, imageColor }: { title: strin
               <p className="text-sm font-mono text-white">{adminId}</p>
             </div>
           </div>
+
           
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center text-[#D4AF37]">

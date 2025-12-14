@@ -5,6 +5,7 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
+
   
   --gold-primary: #D4AF37;
   --gold-light: #F4C430;
@@ -51,4 +52,9 @@ body {
   background: linear-gradient(to right, var(--gold-dark), var(--gold-primary), var(--gold-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Custom Utility for pausing animation */
+.pause {
+  animation-play-state: paused;
 }

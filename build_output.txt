@@ -9,10 +9,14 @@
    Linting and checking validity of types ...
    Collecting page data ...
    Generating static pages (0/7) ...
-   Generating static pages (1/7) 
-   Generating static pages (3/7) 
-   Generating static pages (5/7) 
- ✓ Generating static pages (7/7) 
+
+   Generating static pages (1/7)
+
+   Generating static pages (3/7)
+
+   Generating static pages (5/7)
+
+ ✓ Generating static pages (7/7)
    Finalizing page optimization ...
    Collecting build traces ...
 
@@ -30,4 +34,3 @@ Route (app)                              Size     First Load JS
 
 ○  (Static)   prerendered as static content
 λ  (Dynamic)  server-rendered on demand using Node.js
-

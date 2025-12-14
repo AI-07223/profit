@@ -29,6 +29,13 @@ export const ContactForm = () => {
       //   headers: { 'Content-Type': 'application/json' },
       //   body: JSON.stringify({ ...formData, created_at: new Date().toISOString() }),
       // });
+
+      // Simulating network request
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // If actual integration:
+      // if (response.ok) setStatus('success'); else setStatus('error');
+
       
       // Simulating network request
       await new Promise(resolve => setTimeout(resolve, 1500));
@@ -57,6 +64,8 @@ export const ContactForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300">Full Name</label>
+                <input
+                  type="text"
                 <input 
                   type="text" 
                   name="name"
@@ -69,6 +78,8 @@ export const ContactForm = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300">Phone Number</label>
+                <input
+                  type="tel"
                 <input 
                   type="tel" 
                   name="phone"
@@ -84,6 +95,8 @@ export const ContactForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300">City / Country</label>
+                <input
+                  type="text"
                 <input 
                   type="text" 
                   name="city"
@@ -96,6 +109,7 @@ export const ContactForm = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300">Select Panel Type</label>
+                <select
                 <select 
                   name="panel"
                   value={formData.panel}
@@ -112,6 +126,7 @@ export const ContactForm = () => {
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-300">Estimated Budget</label>
+              <select
               <select 
                 name="budget"
                 value={formData.budget}
@@ -125,6 +140,8 @@ export const ContactForm = () => {
               </select>
             </div>
 
+            <button
+              type="submit"
             <button 
               type="submit" 
               disabled={status === 'submitting'}
@@ -145,6 +162,7 @@ export const ContactForm = () => {
                 <span>Thank you! Your request has been sent successfully. We will contact you soon.</span>
               </div>
             )}
+
             
             {status === 'error' && (
               <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded flex items-center gap-2">
@@ -154,6 +172,7 @@ export const ContactForm = () => {
             )}
 
             <p className="text-xs text-gray-500 text-center mt-4">
+              By submitting this form, you agree to our Terms of Service and Privacy Policy.
               By submitting this form, you agree to our Terms of Service and Privacy Policy. 
               <br/>To connect Google Sheets, simply add your webhook URL in the code.
             </p>

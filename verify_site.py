@@ -4,6 +4,7 @@ def verify_site_navigation():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
+
         
         # 1. Verify Homepage
         print("Navigating to Homepage...")
@@ -16,6 +17,11 @@ def verify_site_navigation():
         print("Navigating to White Label Casino page...")
         # Direct navigation is safer than hoping dropdown click works instantly in headless
         page.goto("http://localhost:3000/solutions/white-label-online-casino-software")
+
+        # Using a more robust selector that doesn't rely on exact text match if font loading is slow
+        # But we know the H1 should contain "White Label Online Casino"
+        page.wait_for_selector("h1", timeout=10000)
+
         
         # Using a more robust selector that doesn't rely on exact text match if font loading is slow
         # But we know the H1 should contain "White Label Online Casino"

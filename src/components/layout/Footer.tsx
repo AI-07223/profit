@@ -29,6 +29,7 @@ export const Footer = () => {
     <footer className="bg-zinc-950 text-gray-300 border-t border-zinc-800 pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
           
           {/* Brand Column */}
           <div className="space-y-6">
@@ -36,6 +37,7 @@ export const Footer = () => {
                <Logo className="h-14" />
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
+              Profitplus Gaming is an award-winning and rapidly-growing online casino and sports betting software provider Company.
               Profitplus Gaming is an award-winning and rapidly-growing online casino and sports betting software provider Company. 
               We develop quality solutions to ensure your business runs smoothly, successfully, and hassle-free.
             </p>

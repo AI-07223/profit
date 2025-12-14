@@ -20,11 +20,18 @@ export const WhyChooseUs = () => {
     <section className="py-24 bg-zinc-900 border-y border-zinc-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
+
           
           <div className="lg:w-1/2">
             <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">Why Choose Profitplus</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Partner with the <br/><span className="text-[#D4AF37]">Industry Leaders</span></h2>
             <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+              We don't just provide software; we provide a partnership for growth.
+              Our white label solutions are designed to minimize your time-to-market while maximizing your revenue potential.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <FeatureItem
               We don't just provide software; we provide a partnership for growth. 
               Our white label solutions are designed to minimize your time-to-market while maximizing your revenue potential.
             </p>
@@ -35,16 +42,19 @@ export const WhyChooseUs = () => {
                 title="Fast Setup"
                 description="Launch your casino in weeks, not months, with our streamlined onboarding process."
               />
+              <FeatureItem
               <FeatureItem 
                 icon={<Settings size={24} />}
                 title="100% Customizable"
                 description="Tailor the look and feel of your platform to match your unique brand identity."
               />
+              <FeatureItem
               <FeatureItem 
                 icon={<Headphones size={24} />}
                 title="24/7 Support"
                 description="Dedicated account managers and technical support available round the clock."
               />
+              <FeatureItem
               <FeatureItem 
                 icon={<TrendingUp size={24} />}
                 title="Marketing Tools"
@@ -52,6 +62,7 @@ export const WhyChooseUs = () => {
               />
             </div>
           </div>
+
           
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-[#D4AF37]/20 rounded-full blur-3xl opacity-30"></div>

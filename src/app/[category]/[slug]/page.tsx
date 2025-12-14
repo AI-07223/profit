@@ -15,6 +15,7 @@ interface Props {
 
 export default function DynamicPage({ params }: Props) {
   const { category, slug } = params;
+
   
   const categoryData = siteContent[category];
 
@@ -59,6 +60,10 @@ export default function DynamicPage({ params }: Props) {
                 <p className="mb-6">{pageData.description}</p>
                 <p>{pageData.content}</p>
               </div>
+
+              <div className="flex gap-4">
+                <Link
+                  href="/contact-us"
               
               <div className="flex gap-4">
                 <Link 
@@ -67,6 +72,8 @@ export default function DynamicPage({ params }: Props) {
                 >
                   Get Started <ArrowRight className="w-5 h-5" />
                 </Link>
+                <Link
+                  href="/contact-us"
                 <Link 
                   href="/contact-us" 
                   className="border border-zinc-700 text-white font-bold py-3 px-8 rounded-full hover:bg-white/5 transition-all"
@@ -106,6 +113,8 @@ export default function DynamicPage({ params }: Props) {
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             Join the hundreds of successful operators using Profitplus Gaming solutions.
           </p>
+          <Link
+            href="/contact-us"
           <Link 
             href="/contact-us" 
             className="inline-flex items-center gap-2 bg-[#D4AF37] text-black font-bold py-4 px-10 rounded-full text-lg hover:bg-[#F4C430] transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"

@@ -15,6 +15,7 @@ export const Hero = () => {
           <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-4 block animate-in fade-in slide-in-from-left duration-700">
             Welcome to Profitplus Gaming
           </span>
+
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-in fade-in slide-in-from-left duration-700 delay-100">
             Start Your Own <br />
@@ -22,6 +23,11 @@ export const Hero = () => {
               B to C Brand
             </span>
           </h1>
+
+          <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl animate-in fade-in slide-in-from-left duration-700 delay-200">
+            All Major Panels Available. Develop your B2B & B2C Master. Be your own boss, leave branch, start your own brand. No Middle Man. Direct From Developing Team. Lowest Sharing.
+          </p>
+
           
           <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl animate-in fade-in slide-in-from-left duration-700 delay-200">
             Be a part of the fastest growing industry with the biggest group of iGaming. 

@@ -83,6 +83,12 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#D4AF37] text-center">
+        <h2 className="text-3xl font-bold text-black mb-8">Join the Profitplus Gaming Family</h2>
+        <Link
+          href="/contact-us"
       
       {/* CTA */}
       <section className="py-20 bg-[#D4AF37] text-center">
