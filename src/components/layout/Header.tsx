@@ -26,6 +26,7 @@ const NavLink = ({ href, children, dropdownItems, category }: { href: string; ch
   if (dropdownItems && category) {
     return (
       <div
+      <div 
         className="relative group"
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
@@ -40,6 +41,12 @@ const NavLink = ({ href, children, dropdownItems, category }: { href: string; ch
             {dropdownItems.map((item, idx) => (
               <Link
                 key={idx}
+        
+        {isOpen && (
+          <div className="absolute top-full left-0 w-72 bg-zinc-900 border border-[#D4AF37] shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+            {dropdownItems.map((item, idx) => (
+              <Link 
+                key={idx} 
                 href={getHref(category, item)}
                 className="block px-4 py-3 hover:bg-[#D4AF37] hover:text-black transition-colors text-sm border-b border-zinc-800 last:border-0"
               >
@@ -77,6 +84,10 @@ export const Header = () => {
           <NavLink href="#" category="solutions" dropdownItems={[
             "White Label Online Casino Software",
             "Turnkey Casino Software",
+          
+          <NavLink href="#" category="solutions" dropdownItems={[
+            "White Label Online Casino Software", 
+            "Turnkey Casino Software", 
             "Self-Service Casino"
           ]}>
             Solutions
@@ -85,6 +96,10 @@ export const Header = () => {
           <NavLink href="#" category="services" dropdownItems={[
             "Casino Games Integration",
             "Casino Games Aggregator",
+          
+          <NavLink href="#" category="services" dropdownItems={[
+            "Casino Games Integration", 
+            "Casino Games Aggregator", 
             "Online Casino Payment Solutions",
             "Bonus System Standalone",
             "Sportsbook Solutions & API",
@@ -99,6 +114,10 @@ export const Header = () => {
           <NavLink href="#" category="casino" dropdownItems={[
             "Online Casino Software",
             "Live Casino Software",
+          
+          <NavLink href="#" category="casino" dropdownItems={[
+            "Online Casino Software", 
+            "Live Casino Software", 
             "Casino Games",
             "Lottery & Bingo",
             "Casino Tournament",
@@ -109,6 +128,9 @@ export const Header = () => {
 
           <NavLink href="#" category="white-label" dropdownItems={[
             "White Label Betting Platform",
+          
+          <NavLink href="#" category="white-label" dropdownItems={[
+            "White Label Betting Platform", 
             "White Label Casino"
           ]}>
             White Label
@@ -127,6 +149,7 @@ export const Header = () => {
 
         {/* Mobile Menu Toggle */}
         <button
+        <button 
           className="lg:hidden text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -140,6 +163,7 @@ export const Header = () => {
           <div className="flex flex-col p-4 gap-4">
             <Link href="/" className="border-b border-zinc-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
 
+            
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Solutions</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
@@ -187,6 +211,7 @@ export const Header = () => {
             <Link href="/about-us" className="border-b border-zinc-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
             <Link href="/contact-us" className="border-b border-zinc-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
 
+            
             <Link href="/contact-us" className="bg-[#D4AF37] text-black text-center py-3 font-bold rounded mt-4" onClick={() => setIsMobileMenuOpen(false)}>
               Create Panel
             </Link>

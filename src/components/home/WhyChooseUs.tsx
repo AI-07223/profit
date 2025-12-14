@@ -21,6 +21,7 @@ export const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
 
+          
           <div className="lg:w-1/2">
             <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">Why Choose Profitplus</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Partner with the <br/><span className="text-[#D4AF37]">Industry Leaders</span></h2>
@@ -31,21 +32,30 @@ export const WhyChooseUs = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <FeatureItem
+              We don't just provide software; we provide a partnership for growth. 
+              Our white label solutions are designed to minimize your time-to-market while maximizing your revenue potential.
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <FeatureItem 
                 icon={<Clock size={24} />}
                 title="Fast Setup"
                 description="Launch your casino in weeks, not months, with our streamlined onboarding process."
               />
               <FeatureItem
+              <FeatureItem 
                 icon={<Settings size={24} />}
                 title="100% Customizable"
                 description="Tailor the look and feel of your platform to match your unique brand identity."
               />
               <FeatureItem
+              <FeatureItem 
                 icon={<Headphones size={24} />}
                 title="24/7 Support"
                 description="Dedicated account managers and technical support available round the clock."
               />
               <FeatureItem
+              <FeatureItem 
                 icon={<TrendingUp size={24} />}
                 title="Marketing Tools"
                 description="Built-in affiliate systems and CRM tools to help you acquire and retain players."
@@ -53,6 +63,7 @@ export const WhyChooseUs = () => {
             </div>
           </div>
 
+          
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-[#D4AF37]/20 rounded-full blur-3xl opacity-30"></div>
             <div className="relative bg-black border border-zinc-800 p-8 rounded-2xl shadow-2xl">

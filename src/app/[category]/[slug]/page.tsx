@@ -16,6 +16,7 @@ interface Props {
 export default function DynamicPage({ params }: Props) {
   const { category, slug } = params;
 
+  
   const categoryData = siteContent[category];
 
   if (!categoryData) {
@@ -63,12 +64,18 @@ export default function DynamicPage({ params }: Props) {
               <div className="flex gap-4">
                 <Link
                   href="/contact-us"
+              
+              <div className="flex gap-4">
+                <Link 
+                  href="/contact-us" 
                   className="bg-[#D4AF37] text-black font-bold py-3 px-8 rounded-full hover:bg-[#F4C430] transition-all transform hover:scale-105 flex items-center gap-2"
                 >
                   Get Started <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/contact-us"
+                <Link 
+                  href="/contact-us" 
                   className="border border-zinc-700 text-white font-bold py-3 px-8 rounded-full hover:bg-white/5 transition-all"
                 >
                   Contact Sales
@@ -108,6 +115,8 @@ export default function DynamicPage({ params }: Props) {
           </p>
           <Link
             href="/contact-us"
+          <Link 
+            href="/contact-us" 
             className="inline-flex items-center gap-2 bg-[#D4AF37] text-black font-bold py-4 px-10 rounded-full text-lg hover:bg-[#F4C430] transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
           >
             Request a Demo <ArrowRight className="w-6 h-6" />

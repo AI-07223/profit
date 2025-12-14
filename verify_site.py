@@ -5,6 +5,7 @@ def verify_site_navigation():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
 
+        
         # 1. Verify Homepage
         print("Navigating to Homepage...")
         page.goto("http://localhost:3000")
@@ -21,6 +22,11 @@ def verify_site_navigation():
         # But we know the H1 should contain "White Label Online Casino"
         page.wait_for_selector("h1", timeout=10000)
 
+        
+        # Using a more robust selector that doesn't rely on exact text match if font loading is slow
+        # But we know the H1 should contain "White Label Online Casino"
+        page.wait_for_selector("h1", timeout=10000) 
+        
         # Take screenshot
         page.screenshot(path="/home/jules/verification/02_dynamic_page.png", full_page=True)
         print("Dynamic Page verified.")
