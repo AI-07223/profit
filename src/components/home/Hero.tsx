@@ -17,9 +17,9 @@ export const Hero = () => {
           </span>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-in fade-in slide-in-from-left duration-700 delay-100">
-            Start Your Own <br />
+            All Major Panels Available <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#AA6C39] via-[#D4AF37] to-[#F4C430]">
-              B to C and B to B Brands
+              start your own B2B & B2C
             </span>
           </h1>
 
