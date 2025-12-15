@@ -36,13 +36,6 @@ export const ContactForm = () => {
       // If actual integration:
       // if (response.ok) setStatus('success'); else setStatus('error');
 
-      
-      // Simulating network request
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // If actual integration:
-      // if (response.ok) setStatus('success'); else setStatus('error');
-      
       setStatus('success');
       setFormData({ name: '', phone: '', city: '', panel: 'White Label', budget: '50k - 5Lakh' });
     } catch (error) {
@@ -66,8 +59,6 @@ export const ContactForm = () => {
                 <label className="text-sm font-medium text-gray-300">Full Name</label>
                 <input
                   type="text"
-                <input 
-                  type="text" 
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
@@ -80,8 +71,6 @@ export const ContactForm = () => {
                 <label className="text-sm font-medium text-gray-300">Phone Number</label>
                 <input
                   type="tel"
-                <input 
-                  type="tel" 
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
@@ -97,8 +86,6 @@ export const ContactForm = () => {
                 <label className="text-sm font-medium text-gray-300">City / Country</label>
                 <input
                   type="text"
-                <input 
-                  type="text" 
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
@@ -110,7 +97,6 @@ export const ContactForm = () => {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300">Select Panel Type</label>
                 <select
-                <select 
                   name="panel"
                   value={formData.panel}
                   onChange={handleChange}
@@ -127,7 +113,6 @@ export const ContactForm = () => {
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-300">Estimated Budget</label>
               <select
-              <select 
                 name="budget"
                 value={formData.budget}
                 onChange={handleChange}
@@ -142,8 +127,6 @@ export const ContactForm = () => {
 
             <button
               type="submit"
-            <button 
-              type="submit" 
               disabled={status === 'submitting'}
               className="w-full bg-[#D4AF37] hover:bg-[#F4C430] text-black font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
             >
@@ -163,7 +146,6 @@ export const ContactForm = () => {
               </div>
             )}
 
-            
             {status === 'error' && (
               <div className="bg-red-900/30 border border-red-800 text-red-400 px-4 py-3 rounded flex items-center gap-2">
                 <AlertCircle size={18} />
@@ -173,7 +155,6 @@ export const ContactForm = () => {
 
             <p className="text-xs text-gray-500 text-center mt-4">
               By submitting this form, you agree to our Terms of Service and Privacy Policy.
-              By submitting this form, you agree to our Terms of Service and Privacy Policy. 
               <br/>To connect Google Sheets, simply add your webhook URL in the code.
             </p>
           </form>

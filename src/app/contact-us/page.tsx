@@ -22,7 +22,6 @@ export default function ContactUsPage() {
 
       <ContactForm />
 
-      
       <section className="py-12 bg-black border-t border-zinc-900">
         <div className="container mx-auto px-4 text-center text-gray-400">
           <p className="mb-2">Or reach us directly via:</p>

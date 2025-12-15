@@ -13,11 +13,6 @@ export const TopBar = () => {
           </p>
         </div>
 
-            <span className="font-bold text-yellow-500">Beware of fake sites!</span> Profitplus Gaming is the only genuine platform. 
-            We won’t be responsible if you deal with others claiming to be us. Stay safe.
-          </p>
-        </div>
-        
         <div className="flex items-center gap-4">
           <a href="#" className="hover:text-yellow-500 transition-colors" aria-label="Instagram"><Instagram size={16} /></a>
           <a href="#" className="hover:text-yellow-500 transition-colors" aria-label="Facebook"><Facebook size={16} /></a>
