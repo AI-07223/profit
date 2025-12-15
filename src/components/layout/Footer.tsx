@@ -6,21 +6,23 @@ import { Instagram, Facebook, Send, Phone, Mail, MapPin } from 'lucide-react';
 const toSlug = (text: string) => text.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 const footerLinks = {
-  casino: [
-    { name: "Online Casino Software", url: "/casino/online-casino-software" },
-    { name: "Live Casino Software", url: "/casino/live-casino-software" },
-    { name: "Casino Games", url: "/casino/casino-games" },
-    { name: "Lottery & Bingo", url: "/casino/lottery-bingo" },
-    { name: "Casino Tournament", url: "/casino/casino-tournament" },
-    { name: "Streaming Platform", url: "/casino/streaming-platform" }
+  services: [
+    { name: "Daily Match Posters", url: "/services/daily-match-posters" },
+    { name: "Google/Meta Ads", url: "/services/google-meta-ads" },
+    { name: "Telegram Ads", url: "/services/telegram-ads" },
+    { name: "Logo Design", url: "/services/logo-design" },
+    { name: "Landing Page", url: "/services/landing-page" },
+    { name: "Branding Solution", url: "/services/branding-solution" },
+    { name: "24/7 Backup Team", url: "/services/backup-team" },
+    { name: "Expert Team", url: "/services/expert-team" }
   ],
   solutions: [
     { name: "White Label Casino", url: "/white-label/white-label-casino" },
     { name: "Turnkey Casino Software", url: "/solutions/turnkey-casino-software" },
     { name: "Self-Service Casino", url: "/solutions/self-service-casino" },
     { name: "Sportsbook API", url: "/services/sportsbook-solutions-integration-api" },
-    { name: "Payment Solutions", url: "/services/online-casino-payment-solutions" },
-    { name: "Licensing", url: "/services/licensing" }
+    { name: "Online Casino Software", url: "/casino/online-casino-software" },
+    { name: "Live Casino Software", url: "/casino/live-casino-software" }
   ]
 };
 
@@ -52,11 +54,11 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Casino Column */}
+          {/* Services Column */}
           <div>
-            <h3 className="text-[#D4AF37] font-bold text-lg mb-6 uppercase tracking-wider">Casino</h3>
+            <h3 className="text-[#D4AF37] font-bold text-lg mb-6 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3 text-sm">
-              {footerLinks.casino.map((item) => (
+              {footerLinks.services.map((item) => (
                 <li key={item.name}>
                   <Link href={item.url} className="hover:text-[#D4AF37] transition-colors flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full"></span>
@@ -69,7 +71,7 @@ export const Footer = () => {
 
           {/* Solutions Column */}
           <div>
-            <h3 className="text-[#D4AF37] font-bold text-lg mb-6 uppercase tracking-wider">Solutions</h3>
+            <h3 className="text-[#D4AF37] font-bold text-lg mb-6 uppercase tracking-wider">Solutions & Casino</h3>
             <ul className="space-y-3 text-sm">
               {footerLinks.solutions.map((item) => (
                 <li key={item.name}>

@@ -53,7 +53,55 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Pause animation on hover */
-.animate-scroll:hover {
-  animation-play-state: paused;
+/* Custom animations to replace tailwindcss-animate dependency */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Utility classes compatible with existing code structure */
+.animate-in {
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-left {
+  animation-name: slideInFromLeft;
+}
+
+.slide-in-from-bottom {
+  animation-name: slideInFromBottom;
+}
+
+.slide-in-from-top-2 {
+  animation-name: slideInFromBottom; /* Reusing bottom for simplicity or defined separate */
+}
+
+.zoom-in {
+  animation-name: zoomIn;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.duration-200 { animation-duration: 200ms; }
+.duration-700 { animation-duration: 700ms; }
