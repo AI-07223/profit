@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { ExternalLink, Key, Lock, ChevronDown, ChevronUp } from 'lucide-react';
 import { demoSites, DemoSite } from '../../data/demos';
