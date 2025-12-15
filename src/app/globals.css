@@ -6,7 +6,6 @@
   --background: #0a0a0a;
   --foreground: #ededed;
 
-  
   --gold-primary: #D4AF37;
   --gold-light: #F4C430;
   --gold-dark: #AA6C39;
@@ -54,7 +53,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Custom Utility for pausing animation */
-.pause {
+/* Pause animation on hover */
+.animate-scroll:hover {
   animation-play-state: paused;
 }

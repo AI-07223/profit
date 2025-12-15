@@ -1,9 +1,18 @@
 import React from 'react';
-import { Gamepad2, Layers, CreditCard, ShieldCheck, Globe, Database, Smartphone, Trophy, Wallet } from 'lucide-react';
+import {
+  FileImage,
+  Megaphone,
+  Send,
+  Palette,
+  Layout,
+  Briefcase,
+  Headphones,
+  Crosshair
+} from 'lucide-react';
 
 const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => {
   return (
-    <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-xl hover:bg-zinc-900 hover:border-[#D4AF37] transition-all duration-300 group">
+    <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-xl hover:bg-zinc-900 hover:border-[#D4AF37] transition-all duration-300 group min-w-[300px] w-[350px] mx-4 flex-shrink-0">
       <div className="w-14 h-14 bg-zinc-950 rounded-lg flex items-center justify-center text-[#D4AF37] mb-6 border border-zinc-800 group-hover:border-[#D4AF37] transition-colors">
         {icon}
       </div>
@@ -18,54 +27,49 @@ const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, titl
 export const ServicesSection = () => {
   const services = [
     {
-      icon: <Gamepad2 size={32} />,
-      title: "Casino Games Integration",
-      description: "Integrate 250+ top game providers under one API. We work with the best to give your customers the ultimate gaming experience."
+      icon: <FileImage size={32} />,
+      title: "Daily Match Posters",
+      description: "High-quality, engaging match posters created daily to keep your audience excited."
     },
     {
-      icon: <Layers size={32} />,
-      title: "Turnkey Casino Software",
-      description: "A complete, ready-to-launch casino solution with customizable frontend, powerful backend, and full technical support."
+      icon: <Megaphone size={32} />,
+      title: "Google/Meta Ads",
+      description: "Targeted advertising campaigns on Google and Meta platforms to maximize reach."
     },
     {
-      icon: <Trophy size={32} />,
-      title: "Sportsbook Solutions",
-      description: "Comprehensive sportsbook software covering 50+ sports, live betting, and competitive odds from major data providers."
+      icon: <Send size={32} />,
+      title: "Telegram Ads",
+      description: "Strategic Telegram marketing to tap into highly active communities."
     },
     {
-      icon: <CreditCard size={32} />,
-      title: "Payment Solutions",
-      description: "Secure and diverse payment gateway integration supporting cryptocurrencies, e-wallets, and local payment methods."
+      icon: <Palette size={32} />,
+      title: "Logo Design",
+      description: "Professional logo design services to establish a strong brand identity."
     },
     {
-      icon: <ShieldCheck size={32} />,
-      title: "Licensing & Compliance",
-      description: "We assist with obtaining necessary gaming licenses and ensure your platform meets legal and regulatory standards."
+      icon: <Layout size={32} />,
+      title: "Landing Page",
+      description: "High-converting landing pages tailored to your specific campaign goals."
     },
     {
-      icon: <Database size={32} />,
-      title: "Casino Aggregator",
-      description: "Access thousands of games from a single integration point. Slots, Live Casino, Poker, and more."
+      icon: <Briefcase size={32} />,
+      title: "Branding Solution",
+      description: "A complete, end-to-end branding solution to differentiate you in the market."
     },
     {
-      icon: <Wallet size={32} />,
-      title: "Bonus Systems",
-      description: "Advanced bonus engines to create custom promotions, loyalty programs, and retention strategies for your players."
+      icon: <Headphones size={32} />,
+      title: "24/7 Backup Team",
+      description: "Reliable support team available around the clock to assist you."
     },
     {
-      icon: <Smartphone size={32} />,
-      title: "Mobile First Design",
-      description: "Fully responsive platforms optimized for mobile devices, ensuring a seamless experience for players on the go."
-    },
-    {
-      icon: <Globe size={32} />,
-      title: "White Label Casino",
-      description: "The fastest way to market. We handle the technical infrastructure, you focus on marketing and brand growth."
+      icon: <Crosshair size={32} />,
+      title: "Expert Team",
+      description: "Achieve your business targets with guidance from our experienced industry experts."
     }
   ];
 
   return (
-    <section className="py-24 bg-black relative">
+    <section className="py-24 bg-black relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
@@ -75,10 +79,18 @@ export const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, idx) => (
-            <ServiceCard key={idx} {...service} />
-          ))}
+        {/* Infinite Horizontal Slider */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex animate-scroll">
+            {/* First set of cards */}
+            {services.map((service, idx) => (
+              <ServiceCard key={`s1-${idx}`} {...service} />
+            ))}
+            {/* Second set of cards for seamless loop */}
+            {services.map((service, idx) => (
+              <ServiceCard key={`s2-${idx}`} {...service} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
