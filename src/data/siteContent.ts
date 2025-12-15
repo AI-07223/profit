@@ -49,122 +49,109 @@ export const siteContent: Record<string, Record<string, PageContent>> = {
     }
   },
   services: {
-    "casino-games-integration": {
-      title: "Casino Games Integration",
-      subtitle: "One API, Thousands of Games",
-      description: "Seamlessly integrate thousands of games from the world's top providers through a single unified API.",
+    "daily-match-posters": {
+      title: "Daily Match Posters",
+      subtitle: "Engage Your Audience Every Day",
+      description: "High-quality, professional match posters delivered daily to keep your betting community engaged and excited about upcoming events.",
       features: [
-        "Single API for all providers",
-        "Over 50+ Game Providers",
-        "Slots, Live Casino, Virtual Sports",
-        "Seamless Wallet integration",
-        "Monthly new game updates"
+        "Daily custom designs for major sports events",
+        "Optimized for social media (Instagram, Telegram, Facebook)",
+        "Includes your brand logo and specific odds",
+        "High-resolution formats for print and web",
+        "Fast turnaround times for last-minute matches"
       ],
-      content: "Stop wasting time integrating game providers one by one. With Profitplus Gaming's Aggregation API, you get instant access to the industry's best content including Evolution, Pragmatic Play, Ezugi, and many more. Our robust API ensures high performance and zero downtime."
+      content: "Consistent visual content is crucial for maintaining an active betting community. Our design team creates eye-catching posters for daily cricket matches, football leagues, and other major sporting events. These posters are not just images; they are call-to-action tools designed to drive bets and user activity on your platform. We handle the creative heavy lifting so you can focus on operations."
     },
-    "casino-games-aggregator": {
-      title: "Casino Games Aggregator",
-      subtitle: "The Ultimate Content Hub",
-      description: "Access a vast library of gaming content through our centralized aggregation platform.",
+    "google-meta-ads": {
+      title: "Google & Meta Ads Management",
+      subtitle: "Targeted Traffic Acquisition",
+      description: "Expertly managed advertising campaigns on Google and Meta platforms designed to maximize ROI and acquire high-value players.",
       features: [
-        "Unified reporting system",
-        "Automated game management",
-        "Promotional tools across providers",
-        "Cross-provider jackpots",
-        "Real-time analytics"
+        "Strategic audience targeting and segmentation",
+        "Compliance-focused ad copy and creatives",
+        "Real-time performance monitoring and optimization",
+        "Retargeting campaigns for higher conversion",
+        "Detailed analytics and ROI reporting"
       ],
-      content: "Our Game Aggregator solution simplifies content management. Instead of managing multiple contracts and technical integrations, you deal with one partner. We negotiate the best rates with providers so you can offer the best games to your players at competitive margins."
+      content: "Navigating the restrictions of gambling advertising on major platforms requires expertise. Our team specializes in running compliant, high-converting campaigns on Google Search, Display, Facebook, and Instagram. We use advanced targeting strategies to find players who are actively looking for betting platforms, ensuring your marketing budget is spent efficiently on acquiring genuine users."
     },
-    "online-casino-payment-solutions": {
-      title: "Online Casino Payment Solutions",
-      subtitle: "Secure Global Transaction Processing",
-      description: "Accept payments from players worldwide with our multi-currency and crypto-friendly payment gateway.",
+    "telegram-ads": {
+      title: "Telegram Ads Marketing",
+      subtitle: "Tap Into the Most Active Betting Communities",
+      description: "Strategic marketing campaigns within the Telegram ecosystem, reaching highly engaged audiences in the iGaming and betting niche.",
       features: [
-        "Credit/Debit Cards (Visa/Mastercard)",
-        "E-wallets (Skrill, Neteller, PayPal)",
-        "Cryptocurrencies (BTC, ETH, USDT)",
-        "Local payment methods for Asia/LatAm/Africa",
-        "Anti-fraud protection"
+        "Direct placement in high-traffic betting channels",
+        "Custom bot development for user engagement",
+        "Sponsored posts and community management",
+        "Cross-promotion strategies",
+        "Analytics on channel growth and user acquisition"
       ],
-      content: "Payment processing is the backbone of any iGaming operation. Our gateway supports over 100 payment methods, ensuring your players can deposit and withdraw easily, no matter where they are. We specialize in high-risk processing and crypto payments."
+      content: "Telegram is the heartbeat of the modern betting industry. Our Telegram Ads service helps you penetrate this exclusive market. We have established networks of high-authority channels and influencers where we can promote your brand. Whether it's through sponsored posts, channel takeovers, or automated bot marketing, we ensure your brand gets visible in front of the most relevant audience available."
     },
-    "bonus-system-standalone": {
-      title: "Bonus System Standalone",
-      subtitle: "Engage and Retain Players",
-      description: "A powerful, standalone bonus engine to drive player acquisition and retention.",
+    "logo-design": {
+      title: "Professional Logo Design",
+      subtitle: "Identity That Builds Trust",
+      description: "Custom logo design services that create a strong, memorable, and trustworthy brand identity for your iGaming business.",
       features: [
-        "Deposit bonuses & Free spins",
-        "Cashback automation",
-        "Tournaments and Leaderboards",
-        "VIP/Loyalty levels",
-        "Wagering requirement management"
+        "Multiple unique concepts to choose from",
+        "Vector files for unlimited scalability",
+        "Brand color palette and typography selection",
+        "Social media kit included",
+        "Full copyright ownership transfer"
       ],
-      content: "Gamification is key to retention. Our standalone bonus system can be integrated into any platform to manage complex promotional campaigns, track wagering requirements in real-time, and reward loyal players automatically."
+      content: "Your logo is the first thing a player sees. In the crowded iGaming market, a professional, polished brand identity is essential for building trust. Our designers understand the aesthetics of the betting world—bold, dynamic, and reliable. We work with you to create a visual identity that resonates with your target demographic and stands out from the competition."
     },
-    "sportsbook-solutions-integration-api": {
-      title: "Sportsbook Solutions & Integration API",
-      subtitle: "World-Class Sports Betting Feed",
-      description: "Add a comprehensive sportsbook to your casino with our high-speed betting API.",
+    "landing-page": {
+      title: "High-Converting Landing Pages",
+      subtitle: "Turn Clicks into Depositors",
+      description: "Optimized landing pages designed specifically for iGaming campaigns, focused on maximum conversion rates and user registration.",
       features: [
-        "Pre-match and Live betting",
-        "50,000+ monthly events",
-        "eSports coverage",
-        "Virtual sports",
-        "Risk management included"
+        "Mobile-first responsive design",
+        "Fast loading speeds for better UX",
+        "Integrated registration forms and bonus offers",
+        "A/B testing capabilities",
+        "SEO-friendly structure"
       ],
-      content: "Offer your players the thrill of sports betting. Our Sportsbook solution covers all major leagues and sports, providing competitive odds and a massive range of markets. Available as a turnkey solution or an API integration."
+      content: "Traffic is useless if it doesn't convert. Our landing page service focuses on one metric: Conversion Rate. We build dedicated pages for your specific campaigns (e.g., IPL signups, Welcome Bonus offers) that remove distractions and guide the user towards a single goal: depositing. Using psychological triggers and clean UX, we ensure the highest possible return on your ad spend."
     },
-    "bank-accounts": {
-      title: "Bank Accounts & Corporate Structure",
-      subtitle: "Financial Infrastructure for iGaming",
-      description: "We assist in setting up corporate bank accounts and merchant accounts for high-risk businesses.",
+    "branding-solution": {
+      title: "Complete Branding Solution",
+      subtitle: "End-to-End Brand Strategy",
+      description: "A holistic approach to building your iGaming brand, from visual identity to tone of voice and market positioning.",
       features: [
-        "Offshore banking introduction",
-        "IBAN accounts for gaming companies",
-        "Crypto-friendly banking",
-        "Corporate formation services",
-        "Compliance assistance"
+        "Comprehensive brand guidelines book",
+        "Unified visual language across all channels",
+        "Tone of voice and content strategy",
+        "Competitor analysis and positioning",
+        "Marketing collateral templates"
       ],
-      content: "Navigating the financial world as a gaming company can be difficult. We leverage our network of gaming-friendly banks and EMIs to help you secure the necessary financial infrastructure to operate legally and efficiently."
+      content: "Building a B2C brand requires more than just a logo. It requires a consistent voice and experience across every touchpoint. Our Complete Branding Solution gives you a blueprint for success. We define who you are, who your players are, and how you speak to them. This consistency builds long-term loyalty and turns a generic platform into a recognized market leader."
     },
-    "licensing": {
-      title: "Gaming Licensing Services",
-      subtitle: "Operate Legally and globally",
-      description: "Expert guidance in obtaining gaming licenses in Curacao, Malta, Kahnawake, and other jurisdictions.",
+    "backup-team": {
+      title: "24/7 Backup & Support Team",
+      subtitle: "Reliability When You Need It Most",
+      description: "A dedicated technical and operational support team available round-the-clock to ensure your business never stops running.",
       features: [
-        "Curacao Sub-license options",
-        "Malta (MGA) application support",
-        "Anjouan & Kahnawake licensing",
-        "Compliance consulting",
-        "Corporate structuring for licensing"
+        "24/7 Technical monitoring and response",
+        "Emergency issue resolution",
+        "Server uptime management",
+        "Player support assistance",
+        "Seamless communication channels"
       ],
-      content: "A gaming license is your passport to the global market. Whether you need a quick and affordable Curacao license or a prestigious MGA license, our legal team guides you through the entire application process, ensuring full compliance."
+      content: "The iGaming industry never sleeps, and neither do we. Our 24/7 Backup Team acts as your safety net. Whether it's a server spike during a major match or a critical payment gateway issue, our team is on standby to resolve it immediately. We provide the peace of mind you need to focus on growth, knowing that your backend operations are in safe, capable hands."
     },
-    "live-casino-bundle": {
-      title: "Live Casino Bundle",
-      subtitle: "Real Dealer Experience",
-      description: "A curated package of the best Live Dealer games for your platform.",
+    "expert-team": {
+      title: "Expert Consultancy Team",
+      subtitle: "Achieve Your Targets with Industry Veterans",
+      description: "Access to a team of iGaming veterans who provide strategic guidance to help you hit your revenue and growth targets.",
       features: [
-        "Blackjack, Roulette, Baccarat",
-        "Game Shows",
-        "Multi-language dealers",
-        "HD streaming quality",
-        "Mobile optimized"
+        "Customized growth strategy planning",
+        "Risk management and fraud prevention consulting",
+        "Market expansion advice",
+        "Operational efficiency audits",
+        "Regulatory compliance guidance"
       ],
-      content: "Bring the casino floor to your players' screens. Our Live Casino bundle includes top-tier tables from Evolution, Pragmatic Live, and others, offering an immersive experience that rivals land-based casinos."
-    },
-    "slots-bundle": {
-      title: "Slots Bundle",
-      subtitle: "The Best Reel Action",
-      description: "A massive collection of the most popular slot games.",
-      features: [
-        "Classic 3-reel slots",
-        "Modern Video Slots",
-        "Megaways & Jackpots",
-        "Buy Feature games",
-        "RNG Certified"
-      ],
-      content: "Slots are the biggest revenue driver. Our bundle gives you instant access to thousands of titles, from classic fruit machines to the latest high-volatility video slots, ensuring there is something for every type of player."
+      content: "Don't guess your way to success. Our Expert Team service gives you direct access to professionals who have built and scaled successful iGaming brands. We work as an extension of your management team, analyzing your current performance and identifying untapped opportunities. From optimizing your bonus strategies to refining your acquisition funnels, we provide actionable insights that directly impact your bottom line."
     }
   },
   casino: {

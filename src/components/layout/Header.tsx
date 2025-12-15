@@ -5,13 +5,16 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 // Helper to convert title to slug
-const toSlug = (text: string) => text.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+const toSlug = (text: string) => text.toLowerCase().replace(/ & /g, '-').replace(/\//g, '-').replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 // Explicit slug mapping for complex cases that don't match simple transformation
 const slugMap: Record<string, string> = {
+  "Google/Meta Ads": "google-meta-ads",
+  "24/7 Backup Team": "backup-team",
+  "Expert Team": "expert-team",
+  "Bank Accounts": "bank-accounts",
   "Sportsbook Solutions & API": "sportsbook-solutions-integration-api",
-  "Bank Accounts & Licensing": "bank-accounts", // Should ideally be two separate links, but mapping to one for now or split in UI
-  "Live Casino & Slots Bundles": "live-casino-bundle" // Primary mapping
+  "Live Casino & Slots Bundles": "live-casino-bundle"
 };
 
 const getHref = (category: string, item: string) => {
@@ -62,6 +65,17 @@ const NavLink = ({ href, children, dropdownItems, category }: { href: string; ch
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const serviceItems = [
+    "Daily Match Posters",
+    "Google/Meta Ads",
+    "Telegram Ads",
+    "Logo Design",
+    "Landing Page",
+    "Branding Solution",
+    "24/7 Backup Team",
+    "Expert Team"
+  ];
+
   return (
     <header className="bg-black text-white sticky top-0 z-40 border-b border-zinc-800 shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -82,17 +96,7 @@ export const Header = () => {
             Solutions
           </NavLink>
 
-          <NavLink href="#" category="services" dropdownItems={[
-            "Casino Games Integration",
-            "Casino Games Aggregator",
-            "Online Casino Payment Solutions",
-            "Bonus System Standalone",
-            "Sportsbook Solutions & API",
-            "Bank Accounts",
-            "Licensing",
-            "Live Casino Bundle",
-            "Slots Bundle"
-          ]}>
+          <NavLink href="#" category="services" dropdownItems={serviceItems}>
             Services
           </NavLink>
 
@@ -152,15 +156,11 @@ export const Header = () => {
             <div className="border-b border-zinc-800 pb-2">
               <span className="text-[#D4AF37] font-bold block mb-2">Services</span>
               <div className="pl-4 flex flex-col gap-2 text-sm text-gray-300">
-                <Link href={getHref("services", "Casino Games Integration")} onClick={() => setIsMobileMenuOpen(false)}>Casino Games Integration</Link>
-                <Link href={getHref("services", "Casino Games Aggregator")} onClick={() => setIsMobileMenuOpen(false)}>Casino Games Aggregator</Link>
-                <Link href={getHref("services", "Online Casino Payment Solutions")} onClick={() => setIsMobileMenuOpen(false)}>Online Casino Payment Solutions</Link>
-                <Link href={getHref("services", "Bonus System Standalone")} onClick={() => setIsMobileMenuOpen(false)}>Bonus System Standalone</Link>
-                <Link href={getHref("services", "Sportsbook Solutions & API")} onClick={() => setIsMobileMenuOpen(false)}>Sportsbook Solutions & API</Link>
-                <Link href={getHref("services", "Bank Accounts")} onClick={() => setIsMobileMenuOpen(false)}>Bank Accounts</Link>
-                <Link href={getHref("services", "Licensing")} onClick={() => setIsMobileMenuOpen(false)}>Licensing</Link>
-                <Link href={getHref("services", "Live Casino Bundle")} onClick={() => setIsMobileMenuOpen(false)}>Live Casino Bundle</Link>
-                <Link href={getHref("services", "Slots Bundle")} onClick={() => setIsMobileMenuOpen(false)}>Slots Bundle</Link>
+                {serviceItems.map((item, idx) => (
+                  <Link key={idx} href={getHref("services", item)} onClick={() => setIsMobileMenuOpen(false)}>
+                    {item}
+                  </Link>
+                ))}
               </div>
             </div>
 
