@@ -1,23 +1,186 @@
-# Mobile Menu Auto-Collapse Fix
-
-## Problem
-The mobile menu in the Header component doesn't automatically collapse when a user clicks on a link. This results in the menu staying open after navigation, which is a poor user experience.
-
-## Root Cause
-The mobile menu links in the Header component don't have any onClick handlers to close the menu when a link is clicked.
-
-## Solution Plan
-1. Add onClick handlers to all mobile menu links to close the menu
-2. Test the implementation to ensure the menu collapses after clicking any link
-3. Add a review section with summary of changes
-
-## Implementation Details
-- Modify the Header component to add an onClick handler to all Link components in the mobile menu
-- The handler will call setIsMobileMenuOpen(false) to close the menu
-- This is a simple, minimal change that only affects the necessary code
+# Service Card Alignment Fix
 
 ## Todo Items
-- [ ] Create a todo.md file with the plan
-- [ ] Add onClick handlers to all mobile menu links to close the menu
-- [ ] Test the implementation to ensure the menu collapses after clicking any link
-- [ ] Add a review section to todo.md with summary of changes
+- [x] Analyze the alignment issue in ServiceCard component
+- [x] Fix icon container alignment to center
+- [x] Verify the fix resolves the alignment issue
+- [x] Change text alignment from center to left to match icon position
+
+## Review
+
+### Summary of Changes
+Fixed the alignment issue in the service cards by keeping the icons centered and changing the text to left-align for better visual harmony.
+
+### Root Cause
+The issue was caused by inconsistent alignment between the icon and text elements:
+- Icon container was using `justify-start` (left-aligned)
+- Text elements (title and description) were using `text-center` (center-aligned)
+
+### Solution Implemented
+1. Changed the icon container and inner div from `justify-start` to `justify-center` on lines 34-35 of ServicesSection.tsx
+2. Removed `text-center` class from the title and description elements on lines 39-40
+
+```tsx
+// Icon container change:
+// Before: justify-start
+// After: justify-center
+<div className="w-14 h-14 bg-zinc-950 rounded-lg flex items-center justify-center text-[#D4AF37] mb-6...">
+  <div className="flex items-center justify-center w-full h-full">
+
+// Text alignment change:
+// Before: text-center
+// After: (removed, defaults to left)
+<h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4AF37] transition-colors">{title}</h3>
+<p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+```
+
+### Impact
+- Icons remain centered in their containers
+- Text is now left-aligned, creating a more natural reading flow
+- Visual harmony achieved between the centered icon and left-aligned text
+- No functional changes to the component behavior
+- Minimal code changes with maximum visual improvement
+
+# Firebase Integration for Contact Form
+
+## Todo Items
+- [x] Get Firebase configuration details from user
+- [x] Install Firebase dependencies
+- [x] Create Firebase configuration file with provided details
+- [x] Set up Firebase Firestore database (if not already configured)
+- [x] Update ContactForm component to integrate with Firebase
+- [x] Test form submission to Firebase
+- [x] Fix Firebase Firestore security rules to allow form submissions
+- [x] Implement Cloud Functions to handle form submission
+- [x] Update ContactForm component to use Cloud Functions
+- [x] Install Firebase Functions SDK
+- [x] Review and document the implementation
+
+## Summary of Changes
+
+Connected the contact form to Firebase using Cloud Functions to capture and store user form submissions.
+
+### Root Cause
+The form was previously simulating submission with a timeout delay, with commented-out code for a webhook integration to Google Sheets. There was no actual backend to store the form data.
+
+### Initial Solution Attempted
+1. Installed the Firebase JavaScript SDK with `npm install firebase`
+2. Created a Firebase configuration file at `src/lib/firebase.ts` with the user's Firebase project details
+3. Updated the ContactForm component (`src/components/home/ContactForm.tsx`) to:
+   - Import Firebase Firestore methods (`collection`, `addDoc`) and the database instance
+   - Replace the simulated submission with actual submission to Firestore
+   - Store form data in a "contacts" collection in Firestore
+   - Include a timestamp when the form was submitted
+   - Updated the footer message to remove reference to Google Sheets integration
+
+### Issue with Initial Solution
+During testing, we encountered a "Missing or insufficient permissions" error. This was attempted to be resolved by updating the Firestore security rules in the Firebase console to allow read and write access to the "contacts" collection:
+
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /contacts/{document} {
+      allow read, write: if true;
+    }
+  }
+}
+```
+
+However, the permission issues persisted even after updating the security rules, leading us to implement a Cloud Functions approach.
+
+### Final Solution with Cloud Functions
+1. Set up Firebase Cloud Functions:
+   - Installed Firebase CLI globally: `npm install -g firebase-tools`
+   - Initialized Firebase Functions in the project: `firebase init functions`
+   - Selected the correct project and JavaScript as the language
+   - Installed the Firebase Admin SDK in the functions directory: `npm install firebase-admin`
+   - Deployed the functions: `firebase deploy --only functions`
+
+2. Created a Cloud Function (`functions/src/index.js`) to handle form submissions:
+
+```javascript
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+
+admin.initializeApp();
+
+// Create a function that handles contact form submissions
+exports.submitContactForm = functions.https.onCall(async (data, context) => {
+  // Get form data from the request
+  const { name, phone, city, panel, budget } = data;
+  
+  // Add timestamp
+  const timestamp = new Date().toISOString();
+  
+  // Add the data to Firestore
+  try {
+    await admin.firestore().collection('contacts').add({
+      name,
+      phone,
+      city,
+      panel,
+      budget,
+      created_at: timestamp
+    });
+    
+    // Return success response
+    return { success: true, message: 'Form submitted successfully' };
+  } catch (error) {
+    // Return error response
+    console.error('Error submitting form:', error);
+    return { success: false, message: error.message };
+  }
+});
+```
+
+3. Updated the ContactForm component to use the Cloud Function:
+
+```typescript
+// src/components/home/ContactForm.tsx
+// Changed imports
+import { getFunctions, httpsCallable } from 'firebase/functions';
+import { app } from '@/lib/firebase';
+
+// Updated handleSubmit function
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setStatus('submitting');
+
+  try {
+    // Get a reference to the Cloud Function
+    const functions = getFunctions(app);
+    const submitContactForm = httpsCallable(functions, 'submitContactForm');
+    
+    // Call the Cloud Function with form data
+    const result = await submitContactForm(formData);
+    
+    if (result.data.success) {
+      setStatus('success');
+      setFormData({ name: '', phone: '', city: '', panel: 'White Label', budget: '50k - 5Lakh' });
+    } else {
+      setStatus('error');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    setStatus('error');
+  }
+};
+```
+
+4. Installed the Firebase Functions SDK in the main project: `npm install firebase-functions`
+
+### Impact
+- Form submissions are now stored in Firebase Firestore database through Cloud Functions
+- Data can be viewed in the Firebase Console under the Firestore Database section
+- Users receive feedback on successful or failed submissions
+- No user-facing changes to the form's appearance or behavior
+- Created a more secure implementation using Cloud Functions instead of direct Firestore access
+- Created a comprehensive guide at `tasks/firebase-integration-guide.md` for future reference
+
+### Why Cloud Functions
+Cloud Functions were implemented as a solution to the permission issues we were experiencing with direct Firestore access. This approach:
+- Provides a more secure way to handle form submissions
+- Allows for more complex validation and processing if needed
+- Follows the principle of keeping sensitive operations server-side
+- Is more scalable for handling multiple submissions simultaneously

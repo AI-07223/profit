@@ -23,7 +23,7 @@ const getHref = (category: string, item: string) => {
   return `/${category}/${slug}`;
 };
 
-const NavLink = ({ href, children, dropdownItems, category }: { href: string; children: React.ReactNode; dropdownItems?: string[]; category?: string }) => {
+const NavLink = ({ href, children, dropdownItems, category }: { href?: string; children: React.ReactNode; dropdownItems?: string[]; category?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   if (dropdownItems && category) {
@@ -56,7 +56,7 @@ const NavLink = ({ href, children, dropdownItems, category }: { href: string; ch
   }
 
   return (
-    <Link href={href} className="hover:text-[#D4AF37] transition-colors font-medium py-2">
+    <Link href={href || '#'} className="hover:text-[#D4AF37] transition-colors font-medium py-2">
       {children}
     </Link>
   );

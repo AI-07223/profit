@@ -64,12 +64,13 @@ body {
 
 .backface-hidden {
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; /* Safari support */
+  -webkit-backface-visibility: hidden; /* Safari */
 }
 
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
 
 /* Custom animations to replace tailwindcss-animate dependency */
 @keyframes fadeIn {
