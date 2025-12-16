@@ -17,6 +17,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: 'https://lotus365.in',
     themeColor: 'from-orange-600 to-red-600',
+    backgroundColor: '#DC143C',
   },
   {
     id: 'fairplay',
@@ -26,6 +27,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: 'https://fairplay.club',
     themeColor: 'from-green-600 to-emerald-800',
+    backgroundColor: '#228B22',
   },
   {
     id: 'bet365',
@@ -35,6 +37,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: 'https://bet365.com',
     themeColor: 'from-green-500 to-green-700',
+    backgroundColor: '#008000',
   },
   {
     id: 'gold365',
@@ -44,6 +47,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-yellow-500 to-yellow-700',
+    backgroundColor: '#FFD700',
   },
   {
     id: 'lazer247',
@@ -53,6 +57,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-blue-600 to-indigo-700',
+    backgroundColor: '#1E3A8A',
   },
   {
     id: 'tigerexch',
@@ -62,6 +67,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-orange-400 to-orange-600',
+    backgroundColor: '#FF8C00',
   },
   {
     id: 'd247',
@@ -71,6 +77,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-purple-600 to-purple-800',
+    backgroundColor: '#6B46C1',
   },
   {
     id: 'allpanel',
@@ -80,6 +87,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-gray-700 to-gray-900',
+    backgroundColor: '#374151',
   },
   {
     id: 'reddyanna',
@@ -89,6 +97,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-red-700 to-red-900',
+    backgroundColor: '#B91C1C',
   },
   {
     id: 'diamondexch',
@@ -98,6 +107,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-blue-400 to-blue-600',
+    backgroundColor: '#2563EB',
   },
   {
     id: 'skyexch',
@@ -107,6 +117,7 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-sky-500 to-sky-700',
+    backgroundColor: '#0EA5E9',
   },
   {
     id: 'world777',
@@ -116,5 +127,6 @@ export const demoSites: DemoSite[] = [
     password: 'Pass@123',
     link: '#',
     themeColor: 'from-blue-800 to-indigo-900',
+    backgroundColor: '#1E3A8A',
   },
 ];

@@ -13,20 +13,22 @@ const FlipCard = ({ demo }: { demo: DemoSite }) => {
 
   return (
     <div
-      className="group relative h-48 w-full cursor-pointer perspective-1000"
+      className="group relative h-64 w-full cursor-pointer perspective-1000"
       onClick={handleFlip}
     >
       <div className={`relative h-full w-full transition-all duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
 
         {/* Front Face */}
-        <div className={`absolute inset-0 h-full w-full rounded-lg bg-gradient-to-br ${demo.themeColor} p-4 backface-hidden shadow-lg flex flex-col items-center justify-center border border-zinc-700 group-hover:border-[#D4AF37] transition-colors`}>
+        <div className={`absolute inset-0 h-full w-full rounded-lg ${demo.logoUrl ? 'bg-transparent' : `bg-gradient-to-br ${demo.themeColor}`} p-4 backface-hidden shadow-lg flex flex-col items-center justify-center ${demo.logoUrl ? '' : 'border border-zinc-700 group-hover:border-[#D4AF37]'} transition-colors`} style={!demo.logoUrl && demo.backgroundColor ? { backgroundColor: demo.backgroundColor } : {}}>
            {/* Logo or Styled Text */}
            {demo.logoUrl ? (
-             <img src={demo.logoUrl} alt={demo.name} className="h-12 w-auto object-contain mb-3 drop-shadow-md" onError={(e) => {
-               // Fallback if image fails
-               e.currentTarget.style.display = 'none';
-               e.currentTarget.parentElement?.querySelector('.fallback-text')?.classList.remove('hidden');
-             }} />
+             <div className="w-148 h-56 flex items-center justify-center mb-3 rounded-2xl p-3 shadow-lg" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)' }}>
+               <img src={demo.logoUrl} alt={demo.name} className="w-full h-full object-contain opacity-90 rounded-2xl" onError={(e) => {
+                 // Fallback if image fails
+                 e.currentTarget.style.display = 'none';
+                 e.currentTarget.parentElement?.querySelector('.fallback-text')?.classList.remove('hidden');
+               }} />
+             </div>
            ) : null}
 
            <h3 className={`text-lg sm:text-xl font-bold text-white tracking-wider uppercase drop-shadow-lg text-center leading-tight ${demo.logoUrl ? 'hidden fallback-text' : ''}`}>
@@ -106,7 +108,11 @@ export const DemoSection = () => {
             // Indices 6-7 are hidden on < lg if !showAll (Wait, visibleDemos length is 8, so indices go up to 7).
             // So if index >= 6, add "hidden lg:block".
             // If showAll is true, we want them visible everywhere (default block).
-            <div key={demo.id} className={!showAll && index >= 6 ? "hidden lg:block" : ""}>
+            <div
+              key={demo.id}
+              className={`${!showAll && index >= 6 ? "hidden lg:block" : ""} animate-in fade-in zoom-in duration-500 fill-mode-forwards`}
+              style={{ animationDelay: `${index * 50}ms` }}
+            >
                <FlipCard demo={demo} />
             </div>
           ))}

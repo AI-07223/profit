@@ -31,8 +31,10 @@ const ServiceCard = ({
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-xl h-full hover:bg-zinc-900 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-1 transition-all duration-300 group">
-        <div className="w-14 h-14 bg-zinc-950 rounded-lg flex items-center justify-center text-[#D4AF37] mb-6 border border-zinc-800 group-hover:border-[#D4AF37] transition-colors duration-300 group-hover:bg-[#D4AF37] group-hover:text-black">
-          {icon}
+        <div className="w-14 h-14 bg-zinc-950 rounded-lg flex items-center justify-center text-[#D4AF37] mb-6 border border-zinc-800 group-hover:border-[#D4AF37] transition-colors duration-300 group-hover:bg-[#D4AF37] group-hover:text-black text-center">
+          <div className="flex items-center justify-center w-full h-full">
+            {icon}
+          </div>
         </div>
         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4AF37] transition-colors">{title}</h3>
         <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
@@ -98,10 +100,10 @@ export const ServicesSection = () => {
   return (
     <section className="py-24 bg-black relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-in fade-in zoom-in duration-700">
-          <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Comprehensive <span className="text-[#D4AF37]">iGaming Services</span></h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block animate-in fade-in slide-in-from-bottom duration-700 fill-mode-forwards">Our Expertise</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom duration-700 delay-100 fill-mode-forwards">Comprehensive <span className="text-[#D4AF37]">iGaming Services</span></h2>
+          <p className="text-gray-400 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom duration-700 delay-200 fill-mode-forwards">
             From white label solutions to custom integrations, Profitplus Gaming provides everything you need to succeed in the competitive online gambling market.
           </p>
         </div>

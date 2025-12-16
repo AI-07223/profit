@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { getFunctions, httpsCallable } from 'firebase/functions';
+import { app } from '@/lib/firebase';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,24 +24,21 @@ export const ContactForm = () => {
     setStatus('submitting');
 
     try {
-      // NOTE: This URL should be replaced with the user's actual Google Sheet webhook (e.g. from Sheet Monkey or Google Apps Script)
-      // For now, we simulate a delay to show the UI state.
-      // const response = await fetch('YOUR_SHEET_WEBHOOK_URL', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ ...formData, created_at: new Date().toISOString() }),
-      // });
-
-      // Simulating network request
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      // If actual integration:
-      // if (response.ok) setStatus('success'); else setStatus('error');
-
-      setStatus('success');
-      setFormData({ name: '', phone: '', city: '', panel: 'White Label', budget: '50k - 5Lakh' });
+      // Get a reference to the Cloud Function
+      const functions = getFunctions(app);
+      const submitContactForm = httpsCallable(functions, 'submitContactForm');
+      
+      // Call the Cloud Function with form data
+      const result = await submitContactForm(formData);
+      
+      if (result.data.success) {
+        setStatus('success');
+        setFormData({ name: '', phone: '', city: '', panel: 'White Label', budget: '50k - 5Lakh' });
+      } else {
+        setStatus('error');
+      }
     } catch (error) {
-      console.error(error);
+      console.error('Error submitting form:', error);
       setStatus('error');
     }
   };
@@ -155,7 +154,6 @@ export const ContactForm = () => {
 
             <p className="text-xs text-gray-500 text-center mt-4">
               By submitting this form, you agree to our Terms of Service and Privacy Policy.
-              <br/>To connect Google Sheets, simply add your webhook URL in the code.
             </p>
           </form>
         </div>

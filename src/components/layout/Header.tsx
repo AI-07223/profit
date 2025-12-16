@@ -56,7 +56,7 @@ const NavLink = ({ href, children, dropdownItems, category }: { href?: string; c
   }
 
   return (
-    <Link href={href} className="hover:text-[#D4AF37] transition-colors font-medium py-2">
+    <Link href={href || '#'} className="hover:text-[#D4AF37] transition-colors font-medium py-2">
       {children}
     </Link>
   );
