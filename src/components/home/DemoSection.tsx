@@ -80,8 +80,8 @@ const FlipCard = ({ demo }: { demo: DemoSite }) => {
 export const DemoSection = () => {
   const [showAll, setShowAll] = useState(false);
 
-  // Show first 6 initially, or all if expanded
-  const visibleDemos = showAll ? demoSites : demoSites.slice(0, 6);
+  // Show first 8 initially, or all if expanded
+  const visibleDemos = showAll ? demoSites : demoSites.slice(0, 8);
 
   return (
     <section id="demos" className="py-16 bg-black relative">
@@ -99,13 +99,21 @@ export const DemoSection = () => {
 
         {/* Grid: 2 columns on mobile, 3 on tablet, 4 on desktop */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
-          {visibleDemos.map((demo) => (
-            <FlipCard key={demo.id} demo={demo} />
+          {visibleDemos.map((demo, index) => (
+            // Logic: If !showAll, items at index 6 and 7 should be hidden on mobile (below lg)
+            // But visible on desktop (lg and up)
+            // Indices 0-5 are always visible.
+            // Indices 6-7 are hidden on < lg if !showAll (Wait, visibleDemos length is 8, so indices go up to 7).
+            // So if index >= 6, add "hidden lg:block".
+            // If showAll is true, we want them visible everywhere (default block).
+            <div key={demo.id} className={!showAll && index >= 6 ? "hidden lg:block" : ""}>
+               <FlipCard demo={demo} />
+            </div>
           ))}
         </div>
 
         {/* Expand/Collapse Button */}
-        {demoSites.length > 6 && (
+        {demoSites.length > 8 && (
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}

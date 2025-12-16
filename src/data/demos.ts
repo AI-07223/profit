@@ -12,7 +12,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'lotus365',
     name: 'Lotus365',
-    logoUrl: 'https://logo.clearbit.com/lotus365.in',
+    logoUrl: '/images/logos/Lotus365_logo.jpg',
     adminId: 'ADMIN_L365',
     password: 'Pass@123',
     link: 'https://lotus365.in',
@@ -21,7 +21,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'fairplay',
     name: 'Fairplay',
-    logoUrl: 'https://logo.clearbit.com/fairplay.club',
+    logoUrl: '/images/logos/Fairplay_logo.jpg',
     adminId: 'ADMIN_FP',
     password: 'Pass@123',
     link: 'https://fairplay.club',
@@ -30,7 +30,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'bet365',
     name: 'Bet365',
-    logoUrl: 'https://logo.clearbit.com/bet365.com',
+    logoUrl: '/images/logos/Bet365_logo.jpg',
     adminId: 'ADMIN_B365',
     password: 'Pass@123',
     link: 'https://bet365.com',
@@ -39,7 +39,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'gold365',
     name: 'Gold365',
-    logoUrl: '', // Often hard to find, letting fallback handle it or user update
+    logoUrl: '/images/logos/Gold365_logo.jpg',
     adminId: 'ADMIN_G365',
     password: 'Pass@123',
     link: '#',
@@ -48,7 +48,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'lazer247',
     name: 'Lazer247',
-    logoUrl: '',
+    logoUrl: '/images/logos/Lazer247_logo.jpg',
     adminId: 'ADMIN_LZ',
     password: 'Pass@123',
     link: '#',
@@ -57,7 +57,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'tigerexch',
     name: 'Tigerexch',
-    logoUrl: '',
+    logoUrl: '/images/logos/Tigerexch_logo.jpg',
     adminId: 'ADMIN_TGR',
     password: 'Pass@123',
     link: '#',
@@ -66,7 +66,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'd247',
     name: 'D247',
-    logoUrl: '',
+    logoUrl: '/images/logos/D247_logo.jpg',
     adminId: 'ADMIN_D247',
     password: 'Pass@123',
     link: '#',
@@ -75,7 +75,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'allpanel',
     name: 'AllPanel',
-    logoUrl: '',
+    logoUrl: '/images/logos/AllPanel_logo.jpg',
     adminId: 'ADMIN_AP',
     password: 'Pass@123',
     link: '#',
@@ -84,7 +84,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'reddyanna',
     name: 'Reddyanna',
-    logoUrl: '',
+    logoUrl: '/images/logos/Reddyanna_logo.jpg',
     adminId: 'ADMIN_RA',
     password: 'Pass@123',
     link: '#',
@@ -93,7 +93,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'diamondexch',
     name: 'Diamondexch',
-    logoUrl: '',
+    logoUrl: '/images/logos/Diamondexch_logo.jpg',
     adminId: 'ADMIN_DIA',
     password: 'Pass@123',
     link: '#',
@@ -102,7 +102,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'skyexch',
     name: 'Skyexch',
-    logoUrl: 'https://logo.clearbit.com/skyexchange.com',
+    logoUrl: '/images/logos/Skyexch_logo.jpg',
     adminId: 'ADMIN_SKY',
     password: 'Pass@123',
     link: '#',
@@ -111,7 +111,7 @@ export const demoSites: DemoSite[] = [
   {
     id: 'world777',
     name: 'World777',
-    logoUrl: 'https://logo.clearbit.com/world777.com',
+    logoUrl: '/images/logos/World777_logo.jpg',
     adminId: 'ADMIN_W777',
     password: 'Pass@123',
     link: '#',

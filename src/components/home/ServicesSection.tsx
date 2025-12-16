@@ -106,10 +106,16 @@ export const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Standard Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Flex Layout for Centered Last Row */}
+        <div className="flex flex-wrap justify-center gap-6">
           {services.map((service, idx) => (
-            <ServiceCard key={idx} {...service} index={idx} />
+            // Width calculation:
+            // Mobile (1 col): w-full
+            // Tablet (2 cols): w-[calc(50%-12px)] (gap-6 is 24px, 24/2 = 12)
+            // Desktop (3 cols): w-[calc(33.333%-16px)] (gap-6 is 24px, 24*2/3 = 16)
+            <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+              <ServiceCard {...service} index={idx} />
+            </div>
           ))}
         </div>
       </div>
