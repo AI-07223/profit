@@ -23,7 +23,7 @@ const getHref = (category: string, item: string) => {
   return `/${category}/${slug}`;
 };
 
-const NavLink = ({ href, children, dropdownItems, category }: { href: string; children: React.ReactNode; dropdownItems?: string[]; category?: string }) => {
+const NavLink = ({ href, children, dropdownItems, category }: { href?: string; children: React.ReactNode; dropdownItems?: string[]; category?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   if (dropdownItems && category) {
