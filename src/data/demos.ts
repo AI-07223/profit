@@ -6,6 +6,7 @@ export interface DemoSite {
   password: string;
   link: string;
   themeColor: string; // To add variety to the cards
+  backgroundColor?: string; // Optional: custom background color for cards
 }
 
 export const demoSites: DemoSite[] = [
