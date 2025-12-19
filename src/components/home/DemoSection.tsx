@@ -11,6 +11,8 @@ const FlipCard = ({ demo }: { demo: DemoSite }) => {
     setIsFlipped(!isFlipped);
   };
 
+  const isDemoLogin = !demo.password;
+
   return (
     <div
       className="group relative h-64 w-full cursor-pointer perspective-1000"
@@ -46,22 +48,32 @@ const FlipCard = ({ demo }: { demo: DemoSite }) => {
             <h3 className="text-sm font-bold text-[#D4AF37] truncate">{demo.name}</h3>
           </div>
 
-          <div className="space-y-2">
-             <div className="flex items-center justify-between bg-black/40 p-1.5 rounded">
-                <div className="flex items-center gap-1 text-gray-400">
-                  <Key size={12} />
-                  <span className="text-[10px] uppercase">ID</span>
-                </div>
-                <span className="font-mono text-xs text-white truncate max-w-[80px]">{demo.adminId}</span>
-             </div>
+          <div className={`space-y-2 flex-grow flex flex-col justify-center ${isDemoLogin ? 'items-center' : ''}`}>
+             {!isDemoLogin && (
+               <>
+                 <div className="flex items-center justify-between bg-black/40 p-1.5 rounded w-full">
+                    <div className="flex items-center gap-1 text-gray-400">
+                      <Key size={12} />
+                      <span className="text-[10px] uppercase">ID</span>
+                    </div>
+                    <span className="font-mono text-xs text-white truncate max-w-[80px]">{demo.adminId}</span>
+                 </div>
 
-             <div className="flex items-center justify-between bg-black/40 p-1.5 rounded">
-                <div className="flex items-center gap-1 text-gray-400">
-                  <Lock size={12} />
-                  <span className="text-[10px] uppercase">PW</span>
+                 <div className="flex items-center justify-between bg-black/40 p-1.5 rounded w-full">
+                    <div className="flex items-center gap-1 text-gray-400">
+                      <Lock size={12} />
+                      <span className="text-[10px] uppercase">PW</span>
+                    </div>
+                    <span className="font-mono text-xs text-white truncate max-w-[80px]">{demo.password}</span>
+                 </div>
+               </>
+             )}
+
+             {isDemoLogin && (
+                <div className="text-center text-xs text-gray-400 px-2">
+                   Click below to access the demo login page directly.
                 </div>
-                <span className="font-mono text-xs text-white truncate max-w-[80px]">{demo.password}</span>
-             </div>
+             )}
           </div>
 
           <a
@@ -71,7 +83,7 @@ const FlipCard = ({ demo }: { demo: DemoSite }) => {
             className="mt-1 flex items-center justify-center gap-1 w-full bg-[#D4AF37] text-black font-bold py-1.5 rounded hover:bg-[#F4C430] transition-colors text-xs"
             onClick={(e) => e.stopPropagation()} // Prevent flipping back when clicking the link
           >
-            Login <ExternalLink size={12} />
+            {isDemoLogin ? 'Login with demo' : 'Login'} <ExternalLink size={12} />
           </a>
         </div>
       </div>
