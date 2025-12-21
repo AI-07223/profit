@@ -1,8 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { getFunctions, httpsCallable } from 'firebase/functions';
-import { app } from '@/lib/firebase';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -19,28 +17,32 @@ export const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
 
-    try {
-      // Get a reference to the Cloud Function
-      const functions = getFunctions(app);
-      const submitContactForm = httpsCallable(functions, 'submitContactForm');
-      
-      // Call the Cloud Function with form data
-      const result = await submitContactForm(formData);
-      
-      if (result.data.success) {
-        setStatus('success');
-        setFormData({ name: '', phone: '', city: '', panel: 'White Label', budget: '50k - 5Lakh' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setStatus('error');
-    }
+    // Create WhatsApp message with form data
+    const message = `New Business Inquiry:
+Name: ${formData.name}
+Phone: ${formData.phone}
+City: ${formData.city}
+Panel Type: ${formData.panel}
+Budget: ${formData.budget}`;
+
+    // Create WhatsApp URL with pre-filled message
+    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message and reset form
+    setStatus('success');
+    setFormData({ name: '', phone: '', city: '', panel: 'White Label', budget: '50k - 5Lakh' });
+    
+    // Reset status after 3 seconds
+    setTimeout(() => {
+      setStatus('idle');
+    }, 3000);
   };
 
   return (
@@ -141,7 +143,7 @@ export const ContactForm = () => {
             {status === 'success' && (
               <div className="bg-green-900/30 border border-green-800 text-green-400 px-4 py-3 rounded flex items-center gap-2">
                 <CheckCircle size={18} />
-                <span>Thank you! Your request has been sent successfully. We will contact you soon.</span>
+                <span>Opening WhatsApp with your message! Please send the message to complete your request.</span>
               </div>
             )}
 
